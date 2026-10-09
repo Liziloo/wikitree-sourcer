@@ -37,15 +37,10 @@ function cleanText(inputText) {
 
 function extractData(document, url) {
   var result = {};
-  if (url) {
-    result.url = url;
-  }
-
   result.success = false;
 
-  const titleNode = document.querySelector("title");
-  if (titleNode) {
-    result.name = cleanText(titleNode.textContent.replace(/\s*\|\s*EverAfter$/, ""));
+  if (url) {
+    result.url = url;
   }
 
   result.inscription = "";
@@ -57,7 +52,11 @@ function extractData(document, url) {
   result.cemeteryFullAddress = "";
   result.memorialId = "";
   result.hasImage = false;
-  result.isOnLeaveAFlowerNoteDialog = false;
+
+  const titleNode = document.querySelector("title");
+  if (titleNode) {
+    result.name = cleanText(titleNode.textContent.replace(/\s*\|\s*EverAfter$/, "").replace(/\s*\([^)]*\)/g, ""));
+  }
 
   /*
   const items = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
