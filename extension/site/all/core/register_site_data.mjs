@@ -51,6 +51,7 @@ import "../../ecpp/core/ecpp_site_data.mjs";
 import "../../eggsabdm/core/eggsabdm_site_data.mjs";
 import "../../eggsagrvs/core/eggsagrvs_site_data.mjs";
 import "../../ephesearch/core/ephesearch_site_data.mjs";
+import "../../everafter/core/everafter_site_data.mjs";
 import "../../fg/core/fg_site_data.mjs";
 import "../../findbuch/core/findbuch_site_data.mjs";
 import "../../finistere/core/finistere_site_data.mjs";

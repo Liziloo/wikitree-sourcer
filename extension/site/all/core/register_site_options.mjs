@@ -48,6 +48,7 @@ import "../../ecpp/core/ecpp_options.mjs";
 import "../../eggsabdm/core/eggsabdm_options.mjs";
 import "../../eggsagrvs/core/eggsagrvs_options.mjs";
 import "../../ephesearch/core/ephesearch_options.mjs";
+import "../../everafter/core/everafter_options.mjs";
 import "../../fg/core/fg_options.mjs";
 import "../../findbuch/core/findbuch_options.mjs";
 import "../../finistere/core/finistere_options.mjs";

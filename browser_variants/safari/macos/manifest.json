@@ -111,8 +111,6 @@
     "*://*.wikipedia.org/*",
     "*://*.wikitree.com/*",
     "*://*.yadvashem.org/*",
-    "*://yorkshireburials.uk/*",
-    "*://www.yorkshireburials.uk/*",
     "*://apps.bundesarchiv.de/gedenkbuch/*",
     "*://archive.org/*",
     "*://archives.novascotia.ca/vital-statistics/*",
@@ -127,6 +125,7 @@
     "*://dfg-viewer.de/*",
     "*://digitalarchives.wa.gov/*",
     "*://digitales-archiv.erzbistum-muenchen.de/*",
+    "*://discovereverafter.com/profile/*",
     "*://ecpp.ucr.edu/*",
     "*://gedbas.genealogy.net/*",
     "*://geneteka.genealodzy.pl/*",
@@ -153,7 +152,9 @@
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://www.landesarchiv-nrw.de/*",
     "*://www.scotlandspeople.gov.uk/*",
-    "*://www.szukajwarchiwach.gov.pl/*"
+    "*://www.szukajwarchiwach.gov.pl/*",
+    "*://www.yorkshireburials.uk/*",
+    "*://yorkshireburials.uk/*"
   ],
   "commands": {
     "_execute_action": {
