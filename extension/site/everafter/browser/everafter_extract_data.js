@@ -35,10 +35,63 @@ function cleanText(inputText) {
   return text;
 }
 
+// Returns a heading's value, or null if missing, empty, or "Unknown".
 function getValueByHeading(parent, headingText) {
   const heading = [...parent.querySelectorAll("h3")].find((el) => el.textContent.trim() === headingText);
 
-  return heading?.nextElementSibling?.textContent.trim() ?? "";
+  const value = heading?.nextElementSibling?.textContent.trim();
+
+  if (!value || value === "Unknown") {
+    return null;
+  }
+
+  return value;
+}
+
+// Assigns a heading's value to the result only if it is meaningful.
+function setValueByHeading(result, parent, headingText, fieldName) {
+  const value = getValueByHeading(parent, headingText);
+
+  if (value !== null) {
+    result[fieldName] = value;
+  }
+}
+
+// Extracts cemetery info such as address
+function extractCemeteryInfo(result, document) {
+  const heading = [...document.querySelectorAll("h3")].find((el) => el.textContent.trim() === "Location");
+
+  const location = heading?.parentElement;
+
+  if (!location) return;
+
+  const plot = location.querySelector("div.mt-sm.text-base.lh-base span");
+  if (plot?.textContent.trim()) {
+    result.plot = cleanText(plot.textContent);
+  }
+
+  const cemeteryLink = location.querySelector('a[href*="/cemetery/"]');
+  if (cemeteryLink?.textContent.trim()) {
+    result.cemeteryName = cleanText(cemeteryLink.textContent);
+  }
+
+  const addressDivs = location.querySelectorAll('a[href*="/cemetery/"] + div > div');
+
+  if (addressDivs.length) {
+    const street = cleanText(addressDivs[0].textContent);
+    const locality = addressDivs[1]?.textContent.trim() ?? "";
+
+    if (street && locality) {
+      result.cemeteryFullAddress = cleanText(`${street}, ${locality}`);
+    }
+
+    const match = locality.match(/^(.+),\s*([A-Z]{2})\s+(\d{5}(?:-\d{4})?)$/);
+
+    if (match) {
+      result.cemeteryCity = cleanText(match[1]);
+      result.cemeteryState = match[2];
+    }
+  }
 }
 
 function extractData(document, url) {
@@ -49,11 +102,13 @@ function extractData(document, url) {
     result.url = url;
   }
 
-  result.deathDate = "";
-  result.ageAtDeath = "";
-  result.cemeteryFullAddress = "";
-  result.memorialId = "";
   result.hasImage = false;
+
+  const memorialId = url.match(/\/(\d+)\/?$/);
+
+  if (memorialId) {
+    result.memorialId = memorialId[1];
+  }
 
   const titleNode = document.querySelector("title");
   if (titleNode) {
@@ -65,10 +120,12 @@ function extractData(document, url) {
   )?.parentElement;
 
   if (memorialInfo) {
-    result.birthDate = getValueByHeading(memorialInfo, "Date of Birth");
-    result.ageAtDeath = getValueByHeading(memorialInfo, "Age");
-    result.deathDate = getValueByHeading(memorialInfo, "Date of Death");
+    setValueByHeading(result, memorialInfo, "Date of Birth", "birthDate");
+    setValueByHeading(result, memorialInfo, "Age", "ageAtDeath");
+    setValueByHeading(result, memorialInfo, "Date of Death", "deathDate");
   }
+
+  extractCemeteryInfo(result, document);
 
   result.success = true;
   return result;
