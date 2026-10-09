@@ -1,6 +1,23 @@
 {
   "sourceOfData": "everafter",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "25 Oct 1858"
+  },
+  "eventPlace": {
+    "placeString": "Erie Cemetery",
+    "streetAddress": "2116 Chestnut Street, Erie, PA 16502"
+  },
+  "name": {
+    "name": "Eddie Smith"
+  },
+  "lastNameAtBirth": "Smith",
+  "deathDate": {
+    "dateString": "25 Oct 1858"
+  },
+  "birthDate": {
+    "dateString": "1 Jan 1858"
+  },
   "hasValidData": true
 }
