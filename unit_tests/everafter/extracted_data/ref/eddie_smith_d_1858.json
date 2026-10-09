@@ -1,15 +1,14 @@
 {
-  "url": "https://discovereverafter.com/profile/38552037",
   "success": true,
+  "url": "https://discovereverafter.com/profile/38552037",
+  "hasImage": false,
+  "memorialId": "38552037",
   "name": "Eddie Smith",
   "birthDate": "1 Jan 1858",
   "deathDate": "25 Oct 1858",
-  "cemeteryName": "Erie Cemetery",
-  "cemeteryCity": "Erie",
-  "cemeteryState": "Pennsylvania",
-  "cemeteryFullAddress": "Erie, Erie County, Pennsylvania, USA",
   "plot": "Section E/19/19",
-  "memorialId": "38552037",
-  "citation": "Everafter, database and images (https://discovereverafter.com/profile/38552037: accessed ), memorial page for Eddie Smith (1 Jan 1858-25 Oct 1858), Everafter Memorial ID 38552037, citing Erie Cemetery, Erie, Erie County, Pennsylvania, USA.",
-  "hasImage": false
+  "cemeteryName": "Erie Cemetery",
+  "cemeteryFullAddress": "2116 Chestnut Street, Erie, PA 16502",
+  "cemeteryCity": "Erie",
+  "cemeteryState": "PA"
 }

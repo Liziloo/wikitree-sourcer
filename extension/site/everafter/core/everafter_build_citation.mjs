@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
+Copyright (c) 2020 Robert M Pavey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,30 +24,33 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildEverafterUrl(ed, builder) {
-  return ed.url;
-}
+function buildCoreCitation(data, gd, builder) {
+  let options = builder.getOptions();
+  let target = options.citation_general_target;
 
-function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
-}
+  builder.sourceTitle = "EverAfter";
 
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
-}
+  if (target == "wikitree") {
+    builder.recordLinkOrTemplate = data.url ? "[" + data.url + " EverAfter Memorial]" : "";
+  } else if (data.url) {
+    builder.recordLinkOrTemplate = "EverAfter Memorial: " + data.url;
+  }
 
-function buildRecordLink(ed, gd, builder) {
-  var everafterUrl = buildEverafterUrl(ed, builder);
+  let dataString = "Memorial page for " + data.name;
 
-  let recordLink = "[" + everafterUrl + " Everafter (US) Record]";
-  builder.recordLinkOrTemplate = recordLink;
-}
+  if (data.deathDate && data.birthDate) {
+    dataString += " (" + data.birthDate + "-" + data.deathDate + ")";
+  } else if (data.deathDate) {
+    dataString += " (d. " + data.deathDate + ")";
+  }
 
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  if (data.cemeteryName && data.cemeteryFullAddress) {
+    dataString += ", citing " + data.cemeteryName + ", " + data.cemeteryCity + ", " + data.cemeteryState;
+  }
+
+  dataString += ".";
+
+  builder.dataString = dataString;
 }
 
 function buildCitation(input) {
