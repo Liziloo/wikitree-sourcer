@@ -6,13 +6,12 @@
     "dateString": "25 Oct 1858"
   },
   "eventPlace": {
-    "placeString": "Erie Cemetery",
-    "streetAddress": "2116 Chestnut Street, Erie, PA 16502"
+    "placeString": "2116 Chestnut Street, Erie, PA 16502",
+    "streetAddress": "Erie Cemetery"
   },
   "name": {
     "name": "Eddie Smith"
   },
-  "lastNameAtBirth": "Smith",
   "deathDate": {
     "dateString": "25 Oct 1858"
   },
