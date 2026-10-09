@@ -1,14 +1,14 @@
 {
-  "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://discovereverafter.com/profile/38552037 Everafter (US) Record] (accessed 6 May 2021).\n</ref>",
-    "type": "inline"
-  },
-  "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://discovereverafter.com/profile/38552037 Everafter (US) Record] (accessed 6 May 2021).\n</ref>",
-    "type": "narrative"
-  },
-  "std_source": {
-    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://discovereverafter.com/profile/38552037 Everafter (US) Record] (accessed 6 May 2021).",
-    "type": "source"
-  }
+"std_inline": {
+"citation": "<ref>\n'''Memorial''':\nEverAfter<br/>\nhttps://discovereverafter.com/profile/38552037 (accessed 9 Oct 2026)<br/>\nMemorial page for Eddie Smith (1 Jan 1858-25 Oct 1858), citing Erie Cemetery, Erie, PA.\n</ref>",
+"type": "inline"
+},
+"std_narrative": {
+"citation": "Eddie Smith was mentioned on a memorial at Erie Cemetery, Erie, PA, with a death date of 25 October 1858.<ref>\n'''Memorial''':\nEverAfter<br/>\nhttps://discovereverafter.com/profile/38552037 (accessed 9 Oct 2026)<br/>\nMemorial page for Eddie Smith (1 Jan 1858-25 Oct 1858), citing Erie Cemetery, Erie, PA.\n</ref>",
+"type": "narrative"
+},
+"std_source": {
+"citation": "* '''Memorial''': EverAfter<br/>https://discovereverafter.com/profile/38552037 (accessed 9 Oct 2026)<br/>Memorial page for Eddie Smith (1 Jan 1858-25 Oct 1858), citing Erie Cemetery, Erie, PA.",
+"type": "source"
+}
 }
