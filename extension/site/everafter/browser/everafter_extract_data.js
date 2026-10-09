@@ -35,6 +35,12 @@ function cleanText(inputText) {
   return text;
 }
 
+function getValueByHeading(parent, headingText) {
+  const heading = [...parent.querySelectorAll("h3")].find((el) => el.textContent.trim() === headingText);
+
+  return heading?.nextElementSibling?.textContent.trim() ?? "";
+}
+
 function extractData(document, url) {
   var result = {};
   result.success = false;
@@ -43,12 +49,8 @@ function extractData(document, url) {
     result.url = url;
   }
 
-  result.inscription = "";
-  result.name = "";
-  result.nameHtml = "";
-  result.namePrefix = "";
-  result.ageAtDeath = "";
   result.deathDate = "";
+  result.ageAtDeath = "";
   result.cemeteryFullAddress = "";
   result.memorialId = "";
   result.hasImage = false;
@@ -58,12 +60,15 @@ function extractData(document, url) {
     result.name = cleanText(titleNode.textContent.replace(/\s*\|\s*EverAfter$/, "").replace(/\s*\([^)]*\)/g, ""));
   }
 
-  /*
-  const items = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  if (items.length < 1) {
-    return result;
+  const memorialInfo = [...document.querySelectorAll("h2")].find(
+    (el) => el.textContent.trim() === "Memorial Information"
+  )?.parentElement;
+
+  if (memorialInfo) {
+    result.birthDate = getValueByHeading(memorialInfo, "Date of Birth");
+    result.ageAtDeath = getValueByHeading(memorialInfo, "Age");
+    result.deathDate = getValueByHeading(memorialInfo, "Date of Death");
   }
-  */
 
   result.success = true;
   return result;
