@@ -26,14 +26,26 @@ import { buildSearchData } from "../../extension/site/everafter/core/everafter_b
 import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    // has pref name
-    caseName: "wikitree_stanway-252_read",
-    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
-    typeOfSearch: "Births",
+    // has no country but has cemetery name
+    caseName: "eddie_smith_d_1858",
+    inputPath: "everafter/generalized_data/ref/eddie_smith_d_1858",
   },
-  */
+  {
+    // has country and cemetery name
+    caseName: "helen_hupp_d_1996",
+    inputPath: "fg/generalized_data/ref/helen_hupp_d_1996",
+  },
+  {
+    // has country but no cemetery name
+    caseName: "frederick_dalrymple-hamilton_d_1974",
+    inputPath: "fg/generalized_data/ref/frederick_dalrymple-hamilton_d_1974",
+  },
+  {
+    // has cemetery name but no birth or death place
+    caseName: "john_jack_smith_d_1938",
+    inputPath: "fg/generalized_data/ref/john_jack_smith_d_1938",
+  },
 ];
 
 async function runTests(testManager) {
