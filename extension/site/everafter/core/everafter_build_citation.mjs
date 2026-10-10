@@ -24,30 +24,95 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildEverafterUrl(ed, builder) {
-  return ed.url;
-}
+function buildCoreCitation(data, gd, builder) {
+  // Example citation:
+  // Burial: Find a Grave.
+  // Citing Oak Grove Cemetery, Hillsdale, Hillsdale County, Michigan, USA
+  // {{FindAGrave|115176143}} (accessed 4 April 2022)
+  // William Henry Pavey (1 Dec 1875–14 Apr 1961)
 
-function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
-}
+  let options = builder.getOptions();
+  let target = options.citation_general_target;
 
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
-}
+  let sourceTitle = "Everafter";
 
-function buildRecordLink(ed, gd, builder) {
-  var everafterUrl = buildEverafterUrl(ed, builder);
+  builder.databaseHasImages = true;
 
-  let recordLink = "[" + everafterUrl + " Everafter (US) Record]";
-  builder.recordLinkOrTemplate = recordLink;
-}
+  if (options.citation_general_addEeItemType) {
+    if (!data.hasImage) {
+      builder.databaseHasImages = false;
+    }
+  } else if (options.citation_everafter_includeImageStatus) {
+    if (data.hasImage === true) {
+      sourceTitle += " (has image)";
+    } else if (data.hasImage === false) {
+      sourceTitle += " (no image)";
+    }
+    builder.putSourceTitleInQuotes = false;
+  }
+  builder.sourceTitle = sourceTitle;
 
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  if (target == "wikitree") {
+    if (data.url) {
+      let recordLink = "[" + data.url + " Everafter Memorial]";
+      builder.recordLinkOrTemplate = recordLink;
+    }
+  } else if (data.url) {
+    builder.recordLinkOrTemplate = "Everafter Memorial: " + data.url;
+  }
+
+  let nameString = data.name;
+  let dataString = "Memorial page for " + nameString;
+  if (data.deathDate && data.birthDate) {
+    dataString += " (" + data.birthDate + "-" + data.deathDate + ")";
+  } else if (data.deathDate) {
+    dataString += " (d. " + data.deathDate + ")";
+  }
+
+  if (data.cemeteryName && data.cemeteryFullAddress) {
+    dataString += ", citing " + data.cemeteryName + ", " + data.cemeteryFullAddress;
+
+    if (data.plot && options.citation_everafter_includeImageStatus) {
+      dataString += " (plot: " + data.plot + ")";
+    }
+  }
+
+  if (options.citation_everafter_includeMaintainer && data.citation) {
+    let indexOfMaintained = data.citation.indexOf("Maintained by");
+    if (indexOfMaintained != -1) {
+      let maintainedString = data.citation.substring(indexOfMaintained);
+      if (maintainedString.endsWith(".")) {
+        maintainedString = maintainedString.substring(0, maintainedString.length - 1).trim();
+      }
+      dataString += "; " + maintainedString;
+    }
+  }
+
+  dataString += ".";
+
+  if (data.inscription && options.citation_everafter_includeInscription) {
+    if (options.citation_general_addBreaksWithinBody) {
+      dataString += "<br/>";
+    } else {
+      dataString += " ";
+    }
+    if (builder.type != "source" && options.citation_general_addNewlinesWithinBody) {
+      dataString += "\n";
+    }
+    let inscription = data.inscription.trim();
+    dataString += "''";
+    if (inscription[0] != '"' && inscription[0] != "'") {
+      dataString += '"';
+    }
+    dataString += inscription;
+    let inscriptionEnd = inscription[inscription.length - 1];
+    if (inscriptionEnd != '"' && inscriptionEnd != "'") {
+      dataString += '"';
+    }
+    dataString += "''";
+  }
+
+  builder.dataString = dataString;
 }
 
 function buildCitation(input) {
