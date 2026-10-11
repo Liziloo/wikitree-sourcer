@@ -32,7 +32,7 @@ const searchMenuConfig = {
   siteName: "everafter",
   siteDisplayName: "Everafter (US)",
   localStorageConfig: {
-    searchUrl: "https://put_your_search_url_here",
+    searchUrl: "https://www.discovereverafter.com/",
   },
   defaultMenuItem: {
     menuItemText: "Search Everafter (US)",

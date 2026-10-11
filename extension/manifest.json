@@ -125,7 +125,7 @@
     "*://dfg-viewer.de/*",
     "*://digitalarchives.wa.gov/*",
     "*://digitales-archiv.erzbistum-muenchen.de/*",
-    "*://discovereverafter.com/profile/*",
+    "*://*.discovereverafter.com/profile/*",
     "*://ecpp.ucr.edu/*",
     "*://gedbas.genealogy.net/*",
     "*://geneteka.genealodzy.pl/*",

@@ -26,7 +26,7 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
   siteName: "everafter",
-  matches: ["*://discovereverafter.com/profile/*"],
+  matches: ["*://*.discovereverafter.com/profile/*"],
   repositoryName: "Everafter (US)",
   usPhoneNumber: "",
   email: "",
