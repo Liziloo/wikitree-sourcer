@@ -78,13 +78,14 @@ function extractCemeteryInfo(result, document) {
   const addressDivs = location.querySelectorAll('a[href*="/cemetery/"] + div > div');
 
   if (addressDivs.length) {
-    const street = cleanText(addressDivs[0].textContent);
-    const locality = addressDivs[1]?.textContent.trim() ?? "";
+    const addressLines = [...addressDivs].map((div) => cleanText(div.textContent)).filter(Boolean);
 
-    if (street && locality) {
-      result.cemeteryFullAddress = cleanText(`${street}, ${locality}`);
+    if (addressLines.length) {
+      result.cemeteryFullAddress = addressLines.join(", ").replace(/, (\d{4,})$/, " $1");
     }
 
+    // Extract city and state for US addresses.
+    const locality = addressLines[1] ?? "";
     const match = locality.match(/^(.+),\s*([A-Z]{2})\s+(\d{5}(?:-\d{4})?)$/);
 
     if (match) {
