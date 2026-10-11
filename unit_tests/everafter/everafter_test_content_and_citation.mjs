@@ -44,6 +44,11 @@ const regressionData = [
     caseName: "luke_thomas_dukey_williams_d_2008",
     url: "https://www.discovereverafter.com/profile/39944673",
   },
+  {
+    // has suffix in middle of name with punctuation
+    caseName: "hillary_jr_selui_d_1999",
+    url: "https://www.discovereverafter.com/profile/30015367",
+  },
   /*
   {
     // has extended ASCII characters

@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "everafter",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "2 Dec 1999"
+  },
+  "eventPlace": {
+    "placeString": "85 McKenzie Road, Mangere, Auckland 2022",
+    "streetAddress": "Mangere Lawn Cemetery"
+  },
+  "name": {
+    "name": "Hillary Jr SELUI"
+  },
+  "deathDate": {
+    "dateString": "2 Dec 1999"
+  },
+  "birthDate": {
+    "dateString": "2 Dec 1999"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Everafter\"<br/>\n[https://www.discovereverafter.com/profile/30015367 Everafter Memorial] (accessed 6 May 2021)<br/>\nMemorial page for Hillary Jr. SELUI (2 Dec 1999-2 Dec 1999), citing Mangere Lawn Cemetery, 85 McKenzie Road, Mangere, Auckland 2022.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Hillary was mentioned on a memorial at Mangere Lawn Cemetery, 85 McKenzie Road, Mangere, Auckland 2022, with a death date of 2 December 1999.<ref>\n'''Memorial''':\n\"Everafter\"<br/>\n[https://www.discovereverafter.com/profile/30015367 Everafter Memorial] (accessed 6 May 2021)<br/>\nMemorial page for Hillary Jr. SELUI (2 Dec 1999-2 Dec 1999), citing Mangere Lawn Cemetery, 85 McKenzie Road, Mangere, Auckland 2022.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Everafter\"<br/>[https://www.discovereverafter.com/profile/30015367 Everafter Memorial] (accessed 6 May 2021)<br/>Memorial page for Hillary Jr. SELUI (2 Dec 1999-2 Dec 1999), citing Mangere Lawn Cemetery, 85 McKenzie Road, Mangere, Auckland 2022.",
+    "type": "source"
+  }
+}
