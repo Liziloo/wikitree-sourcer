@@ -39,6 +39,11 @@ const regressionData = [
     caseName: "judith_casler_d_2022",
     url: "https://www.discovereverafter.com/profile/38540192",
   },
+  {
+    // has nickname in parentheses
+    caseName: "luke_thomas_dukey_williams_d_2008",
+    url: "https://www.discovereverafter.com/profile/39944673",
+  },
   /*
   {
     // has extended ASCII characters

@@ -102,10 +102,8 @@ function extractData(document, url) {
     result.url = url;
   }
 
-  result.hasImage = false;
-
   // check to see if there is an image
-  result.hasImage = !!document.querySelector('img[src*="/ext-api/plotimage"]');
+  result.hasImage = /plotImages\.push\(/.test(document.documentElement.innerHTML);
 
   const memorialId = url.match(/\/(\d+)\/?$/);
 

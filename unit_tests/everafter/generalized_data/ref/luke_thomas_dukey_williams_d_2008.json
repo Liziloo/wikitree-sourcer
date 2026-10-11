@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "everafter",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "8 May 2008"
+  },
+  "eventPlace": {
+    "placeString": "20 Fairview Drive, Akatārawa",
+    "streetAddress": "Akatārawa Cemetery"
+  },
+  "name": {
+    "name": "Luke Thomas Williams"
+  },
+  "deathDate": {
+    "dateString": "8 May 2008"
+  },
+  "hasValidData": true
+}
