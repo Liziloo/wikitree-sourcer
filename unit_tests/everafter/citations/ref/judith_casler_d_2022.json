@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Everafter\"<br/>\n[https://www.discovereverafter.com/profile/38540192 Everafter Memorial] (accessed 6 May 2021)<br/>\nMemorial page for Judith Casler (19 Apr 1939-19 May 2022), citing Laurel Hill Cemetery, 4523 Love Road, Erie, PA 16506.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Judith was mentioned on a memorial at Laurel Hill Cemetery, 4523 Love Road, Erie, PA 16506, with a death date of 19 May 2022.<ref>\n'''Memorial''':\n\"Everafter\"<br/>\n[https://www.discovereverafter.com/profile/38540192 Everafter Memorial] (accessed 6 May 2021)<br/>\nMemorial page for Judith Casler (19 Apr 1939-19 May 2022), citing Laurel Hill Cemetery, 4523 Love Road, Erie, PA 16506.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Everafter\"<br/>[https://www.discovereverafter.com/profile/38540192 Everafter Memorial] (accessed 6 May 2021)<br/>Memorial page for Judith Casler (19 Apr 1939-19 May 2022), citing Laurel Hill Cemetery, 4523 Love Road, Erie, PA 16506.",
+    "type": "source"
+  }
+}

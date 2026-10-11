@@ -34,6 +34,11 @@ const regressionData = [
     caseName: "eddie_smith_d_1858",
     url: "https://discovereverafter.com/profile/38552037",
   },
+  {
+    // has photo
+    caseName: "judith_casler_d_2022",
+    url: "https://www.discovereverafter.com/profile/38540192",
+  },
   /*
   {
     // has extended ASCII characters
@@ -167,7 +172,6 @@ const regressionData = [
   },
 */
 ];
-
 
 async function runTests(testManager) {
   await runExtractDataTests("everafter", regressionData, testManager);

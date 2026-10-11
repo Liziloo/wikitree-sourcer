@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "everafter",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "19 May 2022"
+  },
+  "eventPlace": {
+    "placeString": "4523 Love Road, Erie, PA 16506",
+    "streetAddress": "Laurel Hill Cemetery"
+  },
+  "name": {
+    "name": "Judith Casler"
+  },
+  "deathDate": {
+    "dateString": "19 May 2022"
+  },
+  "ageAtDeath": "83 years",
+  "birthDate": {
+    "dateString": "19 Apr 1939"
+  },
+  "hasValidData": true
+}
